@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 17 Responsive Layout</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background: #6ec6ff;
+            padding: 20px;
+            font-family: Arial;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Kotak-kotak utama */
+        .box {
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .header {
+            height: 120px;
+            background: #a6d64f;
+        }
+
+        .section1,
+        .section2,
+        .section3 {
+            height: 90px;
+            background: #22c7d1;
+        }
+
+        /* Footer */
+        .footer {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer .fbox {
+            flex: 1;
+            height: 80px;
+            background: #dcdcdc;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 720px) {
+            .section1,
+            .section2,
+            .section3 {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <header class="box header"></header>
+
+    <section class="box section1"></section>
+    <section class="box section2"></section>
+    <section class="box section3"></section>
+
+    <footer class="footer">
+        <div class="fbox"></div>
+        <div class="fbox"></div>
+        <div class="fbox"></div>
+    </footer>
+
+</div>
+
+</body>
+</html>
