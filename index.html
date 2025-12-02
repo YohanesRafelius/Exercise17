@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Layout Fixed</title>
+    <title>Responsive Layout</title>
 
     <style>
         body {
@@ -22,15 +22,15 @@
             border-radius: 10px;
         }
 
-        /* Section 1 (Hijau) */
+        /* Section 1 */
         .header {
-            height: 140px; /* sedikit lebih panjang */
+            height: 140px;
             background: #a6d64f;
             border-radius: 10px;
             margin-bottom: 20px;
         }
 
-        /* Section 2 (3 kotak biru) */
+        /* Section 2 */
         .section2 {
             display: flex;
             gap: 10px;
@@ -39,12 +39,14 @@
 
         .blue-box {
             flex: 1;
-            height: 130px;  /* lebih panjang ke bawah */
+            height: 130px;
+            min-height: 130px;   
+            flex-shrink: 0;       
             background: #22c7d1;
             border-radius: 10px;
         }
 
-        /* Section 3 (4 kotak abu) */
+        /* Section 3 */
         .section3 {
             display: flex;
             gap: 10px;
@@ -52,27 +54,25 @@
 
         .gray-box {
             flex: 1;
-            height: 110px; /* lebih panjang */
+            height: 110px;
+            min-height: 110px;
+            flex-shrink: 0;
             background: #dcdcdc;
             border-radius: 10px;
         }
 
-        /* --------------------------------------------------- */
-        /*          RESPONSIVE UNTUK WIDTH < 720px            */
-        /* --------------------------------------------------- */
         @media (max-width: 720px) {
 
-            /* Section 2 → jadi 3 kotak vertikal */
             .section2 {
                 flex-direction: column;
             }
 
             .blue-box {
                 width: 100%;
-                height: 140px; /* tetap panjang, tidak hilang */
+                height: 150px; 
+                min-height: 150px;  
             }
 
-            /* Section 3 → grid 2 x 2 */
             .section3 {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -81,10 +81,10 @@
 
             .gray-box {
                 width: 100%;
-                height: 120px; /* lebih panjang */
+                height: 130px;
+                min-height: 130px;
             }
         }
-
     </style>
 </head>
 
@@ -95,14 +95,14 @@
     <!-- SECTION 1 -->
     <div class="header"></div>
 
-    <!-- SECTION 2 (3 kotak biru) -->
+    <!-- SECTION 2 -->
     <div class="section2">
         <div class="blue-box"></div>
         <div class="blue-box"></div>
         <div class="blue-box"></div>
     </div>
 
-    <!-- SECTION 3 (4 kotak abu) -->
+    <!-- SECTION 3 -->
     <div class="section3">
         <div class="gray-box"></div>
         <div class="gray-box"></div>
