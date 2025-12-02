@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 17 Responsive Layout</title>
+    <title>Responsive Layout Exercise 17</title>
 
     <style>
         body {
@@ -22,62 +22,89 @@
             border-radius: 10px;
         }
 
-        /* Kotak-kotak utama */
-        .box {
-            margin-bottom: 15px;
-            border-radius: 8px;
-        }
-
+        /* Section 1 (Hijau) */
         .header {
             height: 120px;
             background: #a6d64f;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
 
-        .section1,
-        .section2,
-        .section3 {
-            height: 90px;
+        /* Section 2 (3 kotak biru horizontal) */
+        .section2 {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .blue-box {
+            flex: 1;
+            height: 100px;
             background: #22c7d1;
+            border-radius: 10px;
         }
 
-        /* Footer */
-        .footer {
+        /* Section 3 (4 kotak abu horizontal) */
+        .section3 {
             display: flex;
             gap: 10px;
         }
 
-        .footer .fbox {
+        .gray-box {
             flex: 1;
             height: 80px;
             background: #dcdcdc;
-            border-radius: 8px;
+            border-radius: 10px;
         }
 
+        /* --------------------------------------------------- */
+        /*          RESPONSIVE UNTUK WIDTH < 720px            */
+        /* --------------------------------------------------- */
         @media (max-width: 720px) {
-            .section1,
-            .section2,
+
+            /* Section 2 → jadi 3 kotak vertikal */
+            .section2 {
+                flex-direction: column;
+            }
+            .blue-box {
+                width: 100%;
+            }
+
+            /* Section 3 → jadi dua kotak per baris */
             .section3 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* 2 kotak per baris */
+                gap: 10px;
+            }
+            .gray-box {
                 width: 100%;
             }
         }
-    </style>
 
+    </style>
 </head>
+
 <body>
 
 <div class="container">
 
-    <header class="box header"></header>
+    <!-- SECTION 1 -->
+    <div class="header"></div>
 
-    <section class="box section1"></section>
-    <section class="box section2"></section>
-    <section class="box section3"></section>
+    <!-- SECTION 2 (3 kotak biru) -->
+    <div class="section2">
+        <div class="blue-box"></div>
+        <div class="blue-box"></div>
+        <div class="blue-box"></div>
+    </div>
 
-    <footer class="footer">
-        <div class="fbox"></div>
-        <div class="fbox"></div>
-        <div class="fbox"></div>
-    </footer>
+    <!-- SECTION 3 (4 kotak abu) -->
+    <div class="section3">
+        <div class="gray-box"></div>
+        <div class="gray-box"></div>
+        <div class="gray-box"></div>
+        <div class="gray-box"></div>
+    </div>
 
 </div>
 
